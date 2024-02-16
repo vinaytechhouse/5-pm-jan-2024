@@ -1,6 +1,7 @@
 ====================
-Power BI Desktop Faqs:
+Power BI Desktop FAQS:
 ====================
+
 Q: Tell me a few differences between import, direct query and connect live?
 	Import:
 		a) structure and data available in PBI dataset
@@ -9,6 +10,7 @@ Q: Tell me a few differences between import, direct query and connect live?
 		d) Refresh of data mandatory
 		e) Report view, Data view, and Model views are available
 		e) More features applicable
+
 	Direct query [RDBMS], Connect Lvel [Cubes]:
 	
 		a) structure only available in PBI dataset
