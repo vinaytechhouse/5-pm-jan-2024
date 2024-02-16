@@ -1,0 +1,266 @@
+====================
+Power BI Desktop Faqs:
+====================
+Q: Tell me a few differences between import, direct query and connect live?
+	Import:
+		a) structure and data available in PBI dataset
+		b) Limited volumes of data [<1 GB, or < 10GB]
+		c) Faster transform, model, secure, visualize options [because data stored in local memory (in-memory)]
+		d) Refresh of data mandatory
+		e) Report view, Data view, and Model views are available
+		e) More features applicable
+	Direct query [RDBMS], Connect Lvel [Cubes]:
+	
+		a) structure only available in PBI dataset
+		b) More volumes of data
+		c) Slower transform, model, secure, visualize options [because every time hits the source]
+		d) Refresh of data is not mandatory [always hits the database and brings data]
+		e) Report view and Model views only available [No Data View]
+		e) Less features applicable when compared to import mode
+Q: If we have 1 GB data, both import and direct query options given, which one you choose and why?
+	Import mode is suitable because of local storage(in-memory), x-velocity engine operations to perform
+	transforms, modeling, visualization quicker.
+
+Q: How do we get latest Detkop in our machines?
+	Two ways
+	a) Below the desktop there is an option to update
+	b) When you download through an account, if you sync that account with MS Store, then automatically update
+		the desktop.
+Q: How to change the language of Power BI Desktop?
+	File menu->Options and Settings-> Options-> Regional Setting->Hindi (India)
+
+Q: How many ways we bring sources data?
+	Three ways
+	a) Enter data
+	b) Get Data->For fresh data source data [New connection is required]
+	c) Recent Sources: Previously used data source in the current system [ We can use existing connections]
+Q: What is the default size of Power BI Desktop?
+	12 KB as on 2024 Jan
+Q: What are the operations we do in Power BI Desktop?
+	Extract, Transform, Model, Security, Visuals
+
+======================
+Report Properties Faqs:
+======================
+a) What are the types of format report exporting possible?
+	Excel, Power Point [Live and Image], PDF
+b) How do we restrict persistency, comments, page tabs, personalization etc.?
+	Report->Settings
+c) How do we personalize a visual?
+	Report-> Settings
+d) What is personalizing visual?
+	Providing visual change capability for a visual at run-time
+e) WHat is Lineage view?
+	Source to Dashboard hierarchical view
+d) How do we check how many people connected to the report, through which method and what are the times?
+	Usage Metrics
+Q: How do we check report opening time?
+	Usage Metrics
+Q: How do we check through which browser how many people connected, unique views?
+	Usage Metrics
+Q: Which area we get links for embedding Power BI Report to Sharepoint, Website, Blog etc.
+	File Menu->Embedding
+Q: Where do we control users and their access on reports?
+	Report->Manage Permissions
+Q: How do provide analyzing data in excel for a customer?
+	By allowing Analyze in Excel option
+Q:  WHere do customers create their own bookmarks?
+	Pesonal Bookmarks area
+Q: How do customer see the report in full size or fitting to a screen?
+	In the View options
+Q: How do schedule a report to deliver in a particular time?
+	Subscribe report option
+Q: How do we share a report immediately [on-demand reporting]?
+	Click Share in the report level
+
+Q: What is insight?
+	Detailed understanding of data from a visual [through a visual]
+Q: What is quick insight?
+	Automatic visual from Microsoft
+
+Q: How many insights system will generate automatically?
+	Max 32
+
+Q: Can we generate a quick insight on RLS reports?
+	Not possible as the data not known till user connects
+
+
+===========================================
+Dataset Properties FAQS
+=============================================
+
+Q: How many types of refresh a Semantic Model has?
+	Two
+	a) On-Demand
+	b) Scheduled
+Q: What type of reports we can generate at cloud from Semantic Model?
+	a) Auto report
+	b) Insights report
+	c) Paginated report
+	d) Normal Report
+	e) Analyze in Excel Report
+Q: HOw do we add people for RLS roles?
+	Dataset->Security
+Q: Can we create cloud level RLS?
+	Not possible, RLS created at Desktop level and users only added at cloud level
+Q: Can we change credentials of source at run-time?
+	Using Data Source Credentials Option
+Q: How do we pass auser interactive value at cloud level?
+	Semantic Model->Parameter
+Q: What type of usage you will find for parameters in real-time?
+	a) Data Source Connections and Credentials passing
+	b) Incremental load values passing
+	c) A few situations input values to the report passing
+Q: What is the usage of Query Caching?
+	To get pre-stored result in case of frequently used operations to improve Query Performance
+Q: How many scheduled refreshes system will support?
+	8 times...Pro account
+	48 times...Premium account
+Q: What type of options available if people trying to access Dataset?
+	a) A request for build permissions is sent in an email to the semantic model owner
+	b) User requesting access will get the specified instructions
+Q: What is the usage of Server Setting?
+	Incase you want to use the dataset or semantic model in other areas [.Net, Java, Python etc.]
+Q: What is recommended for Data Model size is more than 2 GB?
+	Dataset->Large Dataset Storage Format
+Q: Can we share Dataset outside organization?
+	Possible using Dataset->External share option
+
+====================
+Scorecard and Metrics FAQS
+=======================
+Q: What is metric?
+	A goal which talks about current Vs. target with a status in a given interval.
+Q: What is Scorecard?
+	Collection of metrics
+Q: Can we use Power BI Service Metrics in Power BI Desktop?
+	Yes, using Metric Visual [recently added]
+
+====================
+Dataflow Faqs
+=======================
+Q: What is Dataflow?
+	Set of entities or tables with fullty extracted and transformed area suitable for dataset reusability with huge volumes of data.
+Q: Can we create Dataflow at Power BI Desktop?
+	NO, we can create in Power BI Service only.
+Q: Can we use Dataflow in Power BI Service?
+	NO, Dataflow usage in the POwer BI Desktop only
+Q: What is the internal storage does dataflow support?
+	Azure DataLake Gen 2 storage
+Q: Can we use direct incremental refresh in Dataflow?
+	Yes
+Q: Can we connect multiple Dataflows?
+	Yes, Linking Dataflow is the concept
+Q: What type of Engine we have when we work with multiple Dataflows inorder to compensate performance?
+	Enhanced Performance Engine
+
+Q: Single line difference between Dataset and Dataflow?
+	Dataset is for less volumes, created at Desktop and Cloud, used at Desktop and Cloud without modifications to the dataset.
+	Dataflow is for more volumes, created at Servicem used at Desktop with modifications in the referencing Desktop application.
+
+
+
+Workspace and Web Portal Properties Faqs
+==========================
+Q: What is workspace?
+	WOrking area (like Folder) to keep reports, dashboards, scorecards, dataflows etc
+Q: What is Appspace?
+	Multiple reports and dashboards easy sharing area.
+Q: WHat is COntent Pack?
+	Packing the content (reports, dashboards etc.), legacy mechanism prior to Appspace (Modern)
+Q: How many Appspaces we can create for a workspace?
+	Only one
+Q: How many types of roles available for workspace access?
+	Four roles (Admin, Member, Contributor, Viewer)
+Q: Where do we see workspace log statistics?
+	Azure connections->Log Analytics Workspace
+Q: What are the extension of files workspace upload support?
+	.Pbix and .RDL
+Q: What are the icons (diamond, rocket) indicate?
+	Diamond(premium), rocket(deployment pipeline)
+Q: How do we allow users to see exapansion of reports in Appspace?
+	Advanced Settings-->Enable Expand Navigation Pane
+Q: How do we allow users to create a copy of report from Appspace?
+		Advanced Settings-->Enable Allow Users To Make A Copy of the Report
+Q: How do we provide the App directly in the Apps area of the user ?
+	
+	Advanced Settings-->Install the App Automatically
+Q: If a user does not find the required app in the Apps area, how can he get it?
+	Apps Area--> Get Apps-> Search
+Q: What is workspace OneDrive?
+	Workspace can bring content from OneDrive
+
+Q: How do we see datasets, sizes , and manag datasets in a workspce?
+	Workspace->Storage Settings
+Q: How do we share workspace outside organizations?
+	Using Template App
+Q: Can a contributor update App?
+	By default "No", we can enable at workspace settings to provide access.
+Q: Can a user edit data models inside workspace?
+	Latest versions possible, workspace settings has this options
+
+Q: Which component is available for workspace code control and history maintenance?
+	Connect to Git with Azure DevOps
+Q: How do we remove workspace?
+	Workspace settings->Others
+
+
+Web Portal Properties
+==============
+Q: What is Web Portal?
+	A web url connected portal. 
+Q: What type of Service is Power Bi Service?
+	It is saas (Software as Service) 
+
+Q: What is the Web Portal URL for Cloud Service?
+	app.powerbi.com
+Q: How do you identify workspace and report in the web portal?
+	If URL contains Group indicates workspace and Report indicates Report.
+Q: What do you find in notifications?
+	a) Alerts information b) Microsoft updates and information
+Q: Can we use ArcGIS visual in cloud?
+	Yes, you can, by enabling ArcGIS visual setting in Item Settings
+Q: What is Admin Portal?
+	The area where we see Premium Capacities, Storages, Tenants etc.
+Q: Who uses Admin Portal in the organizations?
+	Power BI Administrators and Senior Resources
+Q: How do you identify the Power BI Service is runnig smooth?
+	Help and Support->Check Current Status
+Q: How do you identify the location of Power BI Service Cloud?
+	Help and Support-> About Power BI
+Q: What does Manage Group Storage indicate?
+	User Workspace Storage management
+Q: What does Manage Personal Storage Indicate?
+	Account Specific My Workspace Storage Management
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
